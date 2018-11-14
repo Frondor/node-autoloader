@@ -1,5 +1,7 @@
 # glob-autoload <small>_[Proof of concept]_</small>
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Frondor/node-autoloader.svg)](https://greenkeeper.io/)
+
 <p align="center">
   <a href="https://www.npmjs.com/package/glob-autoload">
     <img src="https://img.shields.io/npm/v/glob-autoload.svg" alt="npm version">
