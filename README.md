@@ -13,9 +13,6 @@
   <a href="https://bundlephobia.com/result?p=glob-autoload@latest">
     <img src="https://img.shields.io/bundlephobia/minzip/glob-autoload.svg" alt="Package size">
   </a>
-  <a href="https://greenkeeper.io/">
-    <img src="https://badges.greenkeeper.io/Frondor/glob-autoload.svg" alt="Greenkeeper badge">
-  </a>
   <a href="https://snyk.io/test/npm/glob-autoload">
     <img src="https://snyk.io/test/npm/glob-autoload/badge.svg" alt="Known Vulnerabilities">
   </a>
@@ -66,7 +63,7 @@ loader.load((err, namespace) => {
   if (err) throw err;
 
   // Since modules are assigned as getters on each namespace
-  // the require() function shall only resolve, once the getter
+  // the require() function shall only resolve, until once the getter
   // has been accessed.
   // So require("./config/app.js") won't be fired until the below
   // statement runs, and then it will always hit require.cache on
