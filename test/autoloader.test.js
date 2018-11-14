@@ -60,8 +60,6 @@ describe("Autoloader class", () => {
       }
     });
 
-    console.log(mockedNamespace);
-
     const loader = new Autoloader({
       cwd: mockedNamespace.cwd,
       namespace: {

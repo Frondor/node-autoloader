@@ -1,5 +1,5 @@
 {
-  "name": "autoload",
+  "name": "autoloader",
   "version": "0.0.1",
   "description": "Automatically create a namespace of lazy-imported modules from the filesystem, by using glob patterns.",
   "private": false,
@@ -15,8 +15,8 @@
     "name": "Federico Vázquez (Frondor)",
     "url": "https://frondor.github.io"
   },
-  "repository": "https: //github.com/Frondor/javascript-library-boilerplate",
-  "homepage": "https://github.com/Frondor/javascript-library-boilerplate#readme",
+  "repository": "https://github.com/Frondor/node-autoloader",
+  "homepage": "https://github.com/Frondor/node-autoloader#readme",
   "license": "MIT",
   "dependencies": {
     "fast-glob": "^2.2.4"
