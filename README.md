@@ -1,24 +1,24 @@
-# Autoload <small>_[Proof of concept]_</small>
+# glob-autoload <small>_[Proof of concept]_</small>
 
 <p align="center">
-  <!-- <a href="https://www.npmjs.com/package/autoload">
-    <img src="https://img.shields.io/npm/v/autoload.svg" alt="npm version">
-  </a> -->
+  <a href="https://www.npmjs.com/package/glob-autoload">
+    <img src="https://img.shields.io/npm/v/glob-autoload.svg" alt="npm version">
+  </a>
   <a href="https://travis-ci.org/Frondor/node-autoloader">
     <img src="https://img.shields.io/travis/Frondor/node-autoloader/master.svg" alt="Build Status">
   </a>
   <a href="https://codecov.io/gh/Frondor/node-autoloader">
     <img src="https://img.shields.io/codecov/c/github/frondor/node-autoloader/master.svg" alt="coverage">
   </a>
-  <!-- <a href="https://bundlephobia.com/result?p=autoload@latest">
-    <img src="https://img.shields.io/bundlephobia/minzip/autoload.svg" alt="Package size">
-  </a> -->
-  <!-- <a href="https://greenkeeper.io/">
-    <img src="https://badges.greenkeeper.io/Frondor/autoload.svg" alt="Greenkeeper badge">
-  </a> -->
-  <!-- <a href="https://snyk.io/test/npm/autoload">
-    <img src="https://snyk.io/test/npm/autoload/badge.svg" alt="Known Vulnerabilities">
-  </a> -->
+  <a href="https://bundlephobia.com/result?p=glob-autoload@latest">
+    <img src="https://img.shields.io/bundlephobia/minzip/glob-autoload.svg" alt="Package size">
+  </a>
+  <a href="https://greenkeeper.io/">
+    <img src="https://badges.greenkeeper.io/Frondor/glob-autoload.svg" alt="Greenkeeper badge">
+  </a>
+  <a href="https://snyk.io/test/npm/glob-autoload">
+    <img src="https://snyk.io/test/npm/glob-autoload/badge.svg" alt="Known Vulnerabilities">
+  </a>
 </p>
 
 Use glob patterns to automatically create a namespace of lazy-imported modules from the filesystem.
@@ -35,10 +35,14 @@ Use glob patterns to automatically create a namespace of lazy-imported modules f
 Run
 
 ```console
-> npm i git+https://git@github.com/frondor/autoloader.git
+> npm i glob-autoload
 ```
 
 ## Getting started
+
+> **Disclaimer**: This is a proof-of-concept project, and will be until v0.1, You can help on a RC by providing feedback about the implementation.
+>
+> Any kind of contributing is more than welcome!
 
 Import this package and create an instance by passing an [Options](#options) object, then call the `load()` method on it.
 
@@ -47,7 +51,7 @@ Import this package and create an instance by passing an [Options](#options) obj
 module.exports = { version: "1.0" };
 
 // /src/index.js
-import Autoloader from "autoloader";
+import Autoloader from "glob-autoload";
 
 const loader = new Autoloader({
   cwd: __directory,

@@ -1,5 +1,5 @@
 {
-  "name": "autoloader",
+  "name": "glob-autoload",
   "version": "0.0.1",
   "description": "Automatically create a namespace of lazy-imported modules from the filesystem, by using glob patterns.",
   "private": false,
@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "coverage": "npm run test -- --coverage"
+    "coverage": "npm run test -- --coverage",
+    "prepublishOnly": "npm test"
   },
   "author": {
     "name": "Federico Vázquez (Frondor)",
