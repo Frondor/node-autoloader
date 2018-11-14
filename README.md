@@ -21,7 +21,7 @@
   </a> -->
 </p>
 
-Automatically create a namespace of lazy-imported modules from the filesystem, by using glob patterns.
+Use glob patterns to automatically create a namespace of lazy-imported modules from the filesystem.
 
 ## Table of contents
 
