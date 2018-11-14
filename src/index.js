@@ -1,34 +1,82 @@
-// ./utils/mod function should not get bundled
-import { sum } from "./utils";
-// import sass / scss modules
-import "./sass/main";
+const fg = require("fast-glob"); // TBR by tiny-glob after v1
+const path = require("path");
+const validate = require("./validator");
 
-console.log("2 + 2 =", sum(2, 2));
-console.log("4 + 4 =", sum(4, 4));
+/**
+ * This error-first callback fires after all the globs have been resolved
+ * @callback readyFn
+ * @param {Error} error if any error happened, it'll be assigned to this param
+ * @param {Namespace} namespace The resolved namespaces with getters for lazy-loading modules
+ */
 
-// ES6: const initializer
-// ES6: arrow function
-const sayHello = hello => {
-  // ES6: Array.from
-  // ES6: Set
-  return Array.from(new Set(hello.split(" ")));
+/**
+ * @typedef {Object} AutoloaderOptions
+ * @prop {path} cwd The root directory to start autoloading from
+ * @prop {Object} namespace Key-value store of namespaces and their respective glob strings
+ * @prop {Boolean} [onlyFiles=true] Return only files.
+ * @prop {string|string[]} [ignore=[]] String or Array of globs to prevent matching files from being actually matched.
+ */
+
+/**
+ * @type {AutoloaderOptions}
+ */
+const defaultOptions = {
+  cwd: null,
+  namespace: {},
+  onlyFiles: true,
+  ignore: []
 };
 
-// ES6: Class
-class sayHi {
-  constructor(hi) {
-    // ES6: Spread operator
-    this.message = ["What does the lib say:", ...sayHello(hi)];
+module.exports = class Autoloader {
+  constructor(opts = defaultOptions) {
+    const { cwd, namespace } = (this.fgOptions = Autoloader.validate(opts));
+    this.cwd = cwd;
+    this.namespace = namespace || {};
   }
 
-  toString() {
-    return `"${this.message.join(" ")}"`;
-  }
-}
+  static validate(opts) {
+    validate.cwd(opts.cwd);
+    validate.ns(opts.namespace);
+    validate.ignore(opts.ignore);
 
-export default function() {
-  const h1 = document.createElement("h1");
-  h1.innerHTML = new sayHi("Good bye! bye!");
-  document.body.appendChild(h1);
-  return h1.innerHTML;
-}
+    return opts;
+  }
+
+  buildNS(ns) {
+    return Object.keys(ns).reduce((space, name) => {
+      const matches = Array.isArray(ns[name]) ? ns[name] : [ns[name]];
+
+      space[name] = fg
+        .sync(matches, this.fgOptions)
+        .reduce((entries, entry) => {
+          Object.defineProperty(entries, entry.replace(/\.js$/, ""), {
+            configurable: true,
+            enumerable: true,
+            get: () => require(path.join(this.cwd, entry))
+          });
+
+          return entries;
+        }, {});
+
+      return space;
+    }, {});
+  }
+
+  emitReady(readyFn, err) {
+    readyFn && readyFn.apply(this, [err, this.namespace]);
+  }
+
+  /**
+   * Resolve the globs and load the files as getters for lazy-loading modules
+   * @param {readyFn} readyFn
+   */
+  load(readyFn) {
+    try {
+      this.namespace = this.buildNS(this.namespace);
+    } catch (err) {
+      return this.emitReady(readyFn, err);
+    }
+
+    this.emitReady(readyFn);
+  }
+};

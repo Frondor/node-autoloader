@@ -1,15 +1,13 @@
 {
-  "name": "servy",
+  "name": "autoload",
   "version": "0.0.1",
-  "description": "",
+  "description": "Automatically create a namespace of lazy-imported modules from the filesystem, by using glob patterns.",
   "private": false,
-  "main": "dist/servy.node.js",
-  "browser": "dist/servy.js",
+  "main": "src",
   "files": [
-    "dist"
+    "src"
   ],
   "scripts": {
-    "build": "webpack --config build/webpack.prod.js",
     "test": "jest",
     "coverage": "npm run test -- --coverage"
   },
@@ -20,21 +18,20 @@
   "repository": "https: //github.com/Frondor/javascript-library-boilerplate",
   "homepage": "https://github.com/Frondor/javascript-library-boilerplate#readme",
   "license": "MIT",
-  "sideEffects": false,
+  "dependencies": {
+    "fast-glob": "^2.2.4"
+  },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.4",
-    "clean-webpack-plugin": "^0.1.19",
-    "jest": "^23.6.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-merge": "^4.1.4"
+    "fs-extra": "^7.0.1",
+    "jest": "^23.6.0"
   },
   "engines": {
-    "node": ">= 8"
+    "node": ">= 8.9"
   },
-  "keywords": []
+  "keywords": [
+    "autoload",
+    "autoloader",
+    "composer",
+    "modules"
+  ]
 }
