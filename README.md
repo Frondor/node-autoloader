@@ -1,7 +1,5 @@
 # glob-autoload <small>_[Proof of concept]_</small>
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Frondor/node-autoloader.svg)](https://greenkeeper.io/)
-
 <p align="center">
   <a href="https://www.npmjs.com/package/glob-autoload">
     <img src="https://img.shields.io/npm/v/glob-autoload.svg" alt="npm version">
@@ -12,8 +10,11 @@
   <a href="https://codecov.io/gh/Frondor/node-autoloader">
     <img src="https://img.shields.io/codecov/c/github/frondor/node-autoloader/master.svg" alt="coverage">
   </a>
-  <a href="https://bundlephobia.com/result?p=glob-autoload@latest">
+  <!-- <a href="https://bundlephobia.com/result?p=glob-autoload@latest">
     <img src="https://img.shields.io/bundlephobia/minzip/glob-autoload.svg" alt="Package size">
+  </a> -->
+  <a href="https://greenkeeper.io/">
+    <img src="https://badges.greenkeeper.io/Frondor/node-autoloader.svg" alt="Greenkeeper badge">
   </a>
   <a href="https://snyk.io/test/npm/glob-autoload">
     <img src="https://snyk.io/test/npm/glob-autoload/badge.svg" alt="Known Vulnerabilities">
