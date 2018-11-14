@@ -1,6 +1,6 @@
 {
   "name": "glob-autoload",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Automatically create a namespace of lazy-imported modules from the filesystem, by using glob patterns.",
   "private": false,
   "main": "src",

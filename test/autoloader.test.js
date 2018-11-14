@@ -49,6 +49,28 @@ describe("Autoloader class", () => {
     });
   });
 
+
+  test("Dont match anything", () => {
+    const mockedNamespace = mockFS(__dirname, {
+      xFiles: {
+        "level1/file.x": 123,
+        "level1/level2/file.x": 456,
+        "level1/domatch": 789
+      }
+    });
+
+    const loader = new Autoloader({
+      cwd: mockedNamespace.cwd,
+      namespace: {
+        xFiles: ["./**/*.jpg"]
+      }
+    });
+
+    loader.load((err, namespace) => {
+      expect(namespace.xFiles).toEqual({});
+    });
+  });
+
   test("Weak-test matching capabilities", () => {
     const wontMatch = "level1/nomatch";
     const mockedNamespace = mockFS(__dirname, {
