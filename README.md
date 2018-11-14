@@ -4,11 +4,11 @@
   <!-- <a href="https://www.npmjs.com/package/autoload">
     <img src="https://img.shields.io/npm/v/autoload.svg" alt="npm version">
   </a> -->
-  <a href="https://travis-ci.org/Frondor/autoload">
-    <img src="https://img.shields.io/travis/Frondor/autoload/master.svg" alt="Build Status">
+  <a href="https://travis-ci.org/Frondor/node-autoloader">
+    <img src="https://img.shields.io/travis/Frondor/node-autoloader/master.svg" alt="Build Status">
   </a>
-  <a href="https://codecov.io/gh/Frondor/autoload">
-    <img src="https://img.shields.io/codecov/c/github/frondor/autoload/master.svg" alt="coverage">
+  <a href="https://codecov.io/gh/Frondor/node-autoloader">
+    <img src="https://img.shields.io/codecov/c/github/frondor/node-autoloader/master.svg" alt="coverage">
   </a>
   <!-- <a href="https://bundlephobia.com/result?p=autoload@latest">
     <img src="https://img.shields.io/bundlephobia/minzip/autoload.svg" alt="Package size">
