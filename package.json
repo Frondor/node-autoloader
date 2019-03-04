@@ -1,14 +1,14 @@
 {
   "name": "glob-autoload",
   "version": "0.0.2",
-  "description": "Automatically create a namespace of lazy-imported modules from the filesystem, by using glob patterns.",
+  "description": "Automatically create a namespace of lazy-imported modules from the filesystem, by using glob patterns",
   "private": false,
   "main": "src",
   "files": [
     "src"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "coverage": "npm test -- --coverage",
     "prepublishOnly": "npm test"
   },
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "fs-extra": "^7.0.1",
-    "jest": "^24.1.0"
+    "jest-cli": "^24.1.0"
   },
   "engines": {
     "node": ">= 8.9"
