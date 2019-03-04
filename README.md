@@ -42,7 +42,7 @@ Run
 
 > **Disclaimer**: This is a proof-of-concept project, and will be until v0.1, You can help on a RC by providing feedback about the implementation.
 >
-> Any kind of contributing is more than welcome!
+> Any kind of contribution is more than welcome!
 
 Import this package and create an instance by passing an [Options](#options) object, then call the `load()` method on it.
 
