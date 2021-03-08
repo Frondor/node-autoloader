@@ -20,7 +20,7 @@
   "homepage": "https://github.com/Frondor/node-autoloader#readme",
   "license": "MIT",
   "dependencies": {
-    "fast-glob": "^3.0.0"
+    "fast-glob": "^3.2.5"
   },
   "devDependencies": {
     "fs-extra": "^7.0.1",
